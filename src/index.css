@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: inter;
+  src: url(./assets/fonts/Inter.woff);
+}
+@font-face {
+  font-family: interBold;
+  src: url(./assets/fonts/Inter-bold.woff);
+}
+.swiper-pagination-bullet {
+  background-color: #46A3584D !important; /* oddiy nuqtalar */
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #46A358 !important; /* faol nuqta */
+}
