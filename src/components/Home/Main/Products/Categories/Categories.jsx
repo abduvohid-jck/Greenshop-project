@@ -6,7 +6,7 @@ import Size from "./Size/Size";
 
 function Categories() {
   return (
-    <div className="desktop:mb-[94px]">
+    <div className="hidden desktop:block desktop:mb-[94px]">
       <Category />
       <PriceRange />
       <Size />

@@ -6,9 +6,7 @@ function Products() {
   return (
     <div>
       <div className="desktop:container desktop:flex">
-        <div className="hidden desktop:block">
           <Categories />
-        </div>
         <Flowers />
       </div>
     </div>
