@@ -1,13 +1,13 @@
 import React from "react";
 import Categories from "./Categories/Categories";
-import Flowers from "./Flowers/flowers";
+import FlowersBoard from "./Flowers/FlowersBoard";
 
 function Products() {
   return (
     <div>
       <div className="desktop:container desktop:flex">
-          <Categories />
-        <Flowers />
+        <Categories />
+        <FlowersBoard />
       </div>
     </div>
   );
