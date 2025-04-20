@@ -11,9 +11,17 @@
   src: url(./assets/fonts/Inter-bold.woff);
 }
 .swiper-pagination-bullet {
-  background-color: #46A3584D !important; /* oddiy nuqtalar */
+  background-color: #46a3584d !important; /* oddiy nuqtalar */
 }
 
 .swiper-pagination-bullet-active {
-  background-color: #46A358 !important; /* faol nuqta */
+  background-color: #46a358 !important; /* faol nuqta */
+}
+
+#discount-flower {
+  background: linear-gradient(
+    180deg,
+    rgba(70, 163, 88, 0.1) 0%,
+    rgba(70, 163, 88, 0.03) 100%
+  );
 }
