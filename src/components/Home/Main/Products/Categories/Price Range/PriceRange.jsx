@@ -1,6 +1,6 @@
 import Box from "@mui/material/Box";
 import Slider from "@mui/material/Slider";
-import React, { useEffect } from "react";
+import React from "react";
 
 function valuetext(value) {
   return `${value}°C`;

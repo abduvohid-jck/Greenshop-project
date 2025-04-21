@@ -5,7 +5,7 @@ import FlowersBoard from "./Flowers/FlowersBoard";
 function Products() {
   return (
     <div>
-      <div className="desktop:container desktop:flex desktop:mb-[94px]">
+      <div className="desktop:container desktop:flex desktop:mb-[94px] desktop:gap-[50px] desktop:justify-between">
         <Categories />
         <FlowersBoard />
       </div>

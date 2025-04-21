@@ -28,7 +28,9 @@ function Category() {
                   {res.title}
                 </p>
                 <p className="font-inter font-[400] text-[15px] text-[#3D3D3D]">
+                  {"("}
                   {res.count}
+                  {")"}
                 </p>
               </button>
             );
