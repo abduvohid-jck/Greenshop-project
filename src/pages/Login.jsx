@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Close from "../assets/icons/Close.svg";
+import Close from "../assets/icons/close.svg";
 import { Link, useNavigate } from "react-router-dom";
 import Google from "../assets/photos/google.svg";
 import Facebook from "../assets/photos/facebook.svg";
