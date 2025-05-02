@@ -11,7 +11,7 @@ function Hero() {
     {
       title: "LET'S MAKE A BETTER",
       flower:
-        "https://s3-alpha-sig.figma.com/img/4575/e3df/52fa214db1f3ce519277860c13b11e21?Expires=1745798400&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=nfXuygYLCAcQXq6pjVbISLqDaSjpolXGe0qRWUx8icaU06SYXB9K7M2HaAA1L-bK7N8PkuxsCHtuacJE5rokEtn8DEDF~s94~gevmgxhAJ5uyoJmcYbngHMswVd5Qmgz56b9a5R5mMmWmh4bF8innUSTdbgsDyDotQtnpdFKDty5VDaQt89-qBL4D58X53UhDFCz0MIO~NR9uETuNN5KT-5pWG0NXZoD6mT4vdD5IirS4yT7NS1zXodZtB256ntkM6H64cLO3Hqmvx4YHgz7POF0Tg9G7csGUoJ4KthiDtDCn3w9NBEZ~6JOF8cFYtJqOUvY-2L1QpZdWm~mbHNCxA__",
+        "https://firebasestorage.googleapis.com/v0/b/aema-image-upload.appspot.com/o/greenshop%2Fimages%2Fflower1.png?alt=media&token=0b53d608-7264-4c54-b497-a9bf054fcd9d",
       button: "SHOP NOW",
     },
     {
