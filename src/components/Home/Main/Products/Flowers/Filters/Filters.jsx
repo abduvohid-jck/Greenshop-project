@@ -6,12 +6,23 @@ import axios from "axios";
 import Box from "@mui/material/Box";
 import Slider from "@mui/material/Slider";
 import { Select, Space } from "antd";
+import { useSearchParams } from "react-router-dom";
 
 function valuetext(value) {
   return `${value}°C`;
 }
 
 function Filters() {
+  let [searchParams, setSearchParams] = useSearchParams();
+
+  let Type = (typeFlowers) => {
+    searchParams.set("type", typeFlowers);
+    setSearchParams(searchParams);
+  };
+  let Sort = (sortFlowers) => {
+    searchParams.set("sort", sortFlowers);
+    setSearchParams(searchParams);
+  };
   const [value, setValue] = useState([0, 1000]);
 
   const handleChange = (event, newValue) => {
@@ -42,15 +53,24 @@ function Filters() {
     <div>
       <div className="flex items-center justify-between desktop:gap-[383px]">
         <div className="flex items-center gap-[27px]">
-          <p className="font-inter font-[400] text-[14px] text-[#3D3D3D] desktop:text-[15px]">
+          <button
+            className="box-border font-inter font-[400] text-[14px] text-[#3D3D3D] desktop:text-[15px] cursor-pointer hover:text-[#46A358] transition ease-in-out duration-[0.5s] focus:text-[#46A358] border-b-[white] border-b-[1px] border-b-[solid] focus:border-b-[#46A358]"
+            onClick={() => Type("all-plants")}
+          >
             All Plants
-          </p>
-          <p className="font-inter font-[400] text-[14px] text-[#3D3D3D] desktop:text-[15px]">
+          </button>
+          <button
+            className="font-inter font-[400] text-[14px] text-[#3D3D3D] desktop:text-[15px] cursor-pointer hover:text-[#46A358] transition ease-in-out duration-[0.5s] focus:text-[#46A358] border-b-[white] border-b-[1px] border-b-[solid] focus:border-b-[#46A358]"
+            onClick={() => Type("new-arrivals")}
+          >
             New Arrivals
-          </p>
-          <p className="font-inter font-[400] text-[14px] text-[#3D3D3D] desktop:text-[15px]">
+          </button>
+          <button
+            className="font-inter font-[400] text-[14px] text-[#3D3D3D] desktop:text-[15px] cursor-pointer hover:text-[#46A358] transition ease-in-out duration-[0.5s] focus:text-[#46A358] border-b-[white] border-b-[1px] border-b-[solid] focus:border-b-[#46A358]"
+            onClick={() => Type("sale")}
+          >
             Sale
-          </p>
+          </button>
         </div>
         <div className="desktop:hidden">
           <button onClick={showModal}>
@@ -119,11 +139,11 @@ function Filters() {
               className="!w-[142.15px] !text-[14px] !font-inter !font-[1000] !text-[#000000e0]"
               defaultValue="Default Sorting"
               style={{ width: 120 }}
-              // onChange={handleChange}
+              onChange={(value) => Sort(value)}
               options={[
-                { value: "defaultSorting", label: "Default Sorting" },
-                { value: "theCheapest", label: "The Cheapest" },
-                { value: "mostExpensive", label: "Most Expensive" },
+                { value: "default-sorting", label: "Default Sorting" },
+                { value: "the-cheapest", label: "The Cheapest" },
+                { value: "most-expensive", label: "Most Expensive" },
               ]}
             />
           </Space>
@@ -134,4 +154,3 @@ function Filters() {
 }
 
 export default Filters;
-

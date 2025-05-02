@@ -1,20 +1,28 @@
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import React from "react";
+import { useSearchParams } from "react-router-dom";
 
 function FlowersCards() {
-  let getData = async () => {
+  let [searchParams] = useSearchParams();
+
+  let category = searchParams.get("category") || "house-plants";
+  let type = searchParams.get("type") || "all-plants";
+  let sort = searchParams.get("sort") || "default-sorting";
+  console.log(sort);
+
+  let getData = async ({ queryKey }) => {
+    let [_key, category, type, sort] = queryKey;
     let res = await axios.get(
-      "https://green-shop-backend.onrender.com/api/flower/category/house-plants?access_token=64bebc1e2c6d3f056a8c85b7&sort=most-expensive&type=sale&range_min=0&range_max=1000"
+      `https://green-shop-backend.onrender.com/api/flower/category/${category}?access_token=64bebc1e2c6d3f056a8c85b7&sort=${sort}&type=${type}&range_min=0&range_max=1000`
     );
     return res?.data?.data;
   };
 
   let { data } = useQuery({
-    queryKey: ["flowers"],
-    queryFn: getData,
+    queryKey: ["flowers", category, type, sort],
+    queryFn: ({ queryKey }) => getData({ queryKey }),
   });
-  console.log(data);
 
   return (
     <div>

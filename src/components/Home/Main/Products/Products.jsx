@@ -14,5 +14,3 @@ function Products() {
 }
 
 export default Products;
-
-// Ushbu fayl kategoriyalar va gullarni flex qilib, birlashtirib chiqazib turishi kerak

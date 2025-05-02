@@ -5,30 +5,8 @@ import "swiper/css/pagination";
 import { Autoplay, Pagination } from "swiper/modules";
 import RightArrow from "../../../assets/icons/right-arrow.svg";
 import LittleFlower from "../../../assets/photos/little-flower.svg";
-import axios from "axios";
 
 function Hero() {
-  // Test
-  // let [name, setName] = useState("");
-  // let [surname, setSurname] = useState("");
-  // let [password, setPassword] = useState("");
-  // let [email, setEmail] = useState("");
-
-  // function Register() {
-  //   axios
-  //     .post(
-  //       "https://green-shop-backend.onrender.com/api/user/sign-up?access_token=6506e8bd6ec24be5de357927",
-  //       {
-  //         name: name,
-  //         surname: surname,
-  //         password: password,
-  //         email: email,
-  //       }
-  //     )
-  //     .then((res) => localStorage.setItem("token", res.data.data.token));
-  // }
-
-  // Test
   let swiperDatas = [
     {
       title: "LET'S MAKE A BETTER",
@@ -52,32 +30,6 @@ function Hero() {
   return (
     <div>
       <div className="desktop:container desktop:mb-[46px]">
-        {/* Test */}
-        {/* Sign Up */}
-        {/* <div>
-          <input
-            onChange={(e) => setName(e.target.value)}
-            type="text"
-            placeholder="Name"
-          />
-          <input
-            onChange={(e) => setSurname(e.target.value)}
-            type="text"
-            placeholder="Surname"
-          />
-          <input
-            onChange={(e) => setPassword(e.target.value)}
-            type="text"
-            placeholder="Password"
-          />
-          <input
-            onChange={(e) => setEmail(e.target.value)}
-            type="text"
-            placeholder="Email"
-          />
-          <button onClick={Register}>Register</button>
-        </div> */}
-        {/* Test */}
         <Swiper
           centeredSlides={true}
           autoplay={{
