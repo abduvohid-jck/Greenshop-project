@@ -9,7 +9,6 @@ function FlowersCards() {
   let category = searchParams.get("category") || "house-plants";
   let type = searchParams.get("type") || "all-plants";
   let sort = searchParams.get("sort") || "default-sorting";
-  console.log(sort);
 
   let getData = async ({ queryKey }) => {
     let [_key, category, type, sort] = queryKey;
