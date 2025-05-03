@@ -46,7 +46,7 @@ function Hero() {
           {swiperDatas.map((data) => {
             return (
               <SwiperSlide>
-                <div className="desktop:relative bg-[#F5F5F580] flex items-center pt-[43px] pb-[43px] desktop:pt-[0px] desktop:pb-[0px] justify-between relative desktop:container desktop:mt-[12px]">
+                <div className="h-[518px] desktop:relative bg-[#F5F5F580] flex items-center pt-[43px] pb-[43px] desktop:pt-[0px] desktop:pb-[0px] justify-between relative desktop:container desktop:mt-[12px]">
                   <div className="ml-[16px] desktop:ml-[40px]">
                     <p className="font-inter font-[500] text-[11px] desktop:text-[14px] text-[#3D3D3D]">
                       WELCOME TO GREENSHOP

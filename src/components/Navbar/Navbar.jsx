@@ -9,8 +9,10 @@ import { Button, Input, Modal } from "antd";
 import Google from "../../assets/photos/google.svg";
 import Facebook from "../../assets/photos/facebook.svg";
 import axios from "axios";
+import { useSelector } from "react-redux";
 
 function Navbar() {
+  let productsInCart = useSelector((state) => state.shopping.data).length;
   let [password, setPassword] = useState("");
   let [email, setEmail] = useState("");
   let [errorMessage, setErrorMessage] = useState("");
@@ -36,22 +38,35 @@ function Navbar() {
     <div>
       <div className="container">
         <div className="flex items-center justify-between py-[16px] desktop:py-[0px] desktop:mt-[25px] desktop:pb-[17.7px] desktop:border-b-[0.3px] desktop:border-b-[#46A35880]">
-          <img
-            className="desktop:w-[150px] desktop:h-[34.3px]"
-            src={Logo}
-            alt="Logo"
-          />
+          <Link to="/">
+            <img
+              className="desktop:w-[150px] desktop:h-[34.3px]"
+              src={Logo}
+              alt="Logo"
+            />
+          </Link>
+
           <div className="hidden desktop:flex  items-center gap-[50px]">
-            <p className="font-inter font-[400] text-[16px] text-[#3D3D3D]">
-              Home
-            </p>
+            <Link to="/">
+              <p className="font-inter font-[400] text-[16px] text-[#3D3D3D]">
+                Home
+              </p>
+            </Link>
             <p className="font-inter font-[400] text-[16px] text-[#3D3D3D]">
               Blog
             </p>
           </div>
           <div className="flex items-center gap-[24px] desktop:gap-[30px]">
             <img src={MagnifyingGlass} alt="Magnifying glass" />
-            <img src={Cart} alt="Cart" />
+            <Link to="/cart" className="relative">
+              {productsInCart != 0 ? (
+                <div className="flex justify-center items-center rounded-[100%] absolute top-[0px] right-[-5px] font-inter font-[500] text-[9px] text-[white] bg-[#46A358] h-[12px] w-[15px] border-[2px] border-[solid] border-[white] p-[6px]">
+                  <p>{productsInCart}</p>
+                </div>
+              ) : null}
+
+              <img src={Cart} alt="Cart" />
+            </Link>
             <Link to="/navigation">
               <img
                 className="desktop:hidden"

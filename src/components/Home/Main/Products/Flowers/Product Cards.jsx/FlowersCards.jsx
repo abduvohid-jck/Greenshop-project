@@ -1,10 +1,15 @@
+import { ShoppingCartOutlined } from "@ant-design/icons";
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import React from "react";
+import { useDispatch } from "react-redux";
 import { useSearchParams } from "react-router-dom";
+import { addDataToShopping } from "../../../../../../redux/shoppingSlice";
 
 function FlowersCards() {
   let [searchParams] = useSearchParams();
+
+  let dispatch = useDispatch();
 
   let category = searchParams.get("category") || "house-plants";
   let type = searchParams.get("type") || "all-plants";
@@ -28,7 +33,22 @@ function FlowersCards() {
       <div className="m-auto mt-[21px] grid grid-cols-2 gap-2 w-[343px] desktop:mt-[38px] desktop:w-auto desktop:grid-cols-3 desktop:gap-3">
         {data?.map((res) => {
           return (
-            <div key={res._id}>
+            <div key={res._id} className="relative group">
+              <button
+                onClick={() =>
+                  dispatch(
+                    addDataToShopping({
+                      _id: res._id,
+                      price: res.price,
+                      title: res.title,
+                      image: res.main_image,
+                    })
+                  )
+                }
+                className="opacity-[0%] top-[160px] desktop:top-[257px] left-[50%] translate-x-[-50%] absolute w-[35px] h-[35px] group-hover:opacity-[100%] flex justify-center items-center bg-white rounded-[4px] transition ease-in-out duration-[0.3s] hover:text-[#46A358]"
+              >
+                <ShoppingCartOutlined className="text-[20px]" />
+              </button>
               <div className=" w-[161px] h-[200px] rounded-[20px] overflow-hidden desktop:rounded-none desktop:w-[258px] desktop:h-[300px] bg-[#FBFBFB]">
                 <img
                   className="w-[100%] h-[100%]"
