@@ -10,21 +10,27 @@ import {
   setCoupon,
 } from "../../redux/shoppingSlice";
 import { DeleteOutlined } from "@ant-design/icons";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function CartComponent() {
   let productsInCart = useSelector((state) => state.shopping.data);
   let total = useSelector((state) => state.shopping.total);
   let dispatch = useDispatch();
-
+  let navigate = useNavigate();
+  let [error, setError] = useState(false);
   return (
     <div>
-      <div className="container mb-[64px]">
-        <p className="hidden desktop:block mt-[36px] mb-[51px] font-inter font-[400] text-[15px] text-[#3D3D3D]">
+      <div className="container mb-[64px] relative">
+        {error == true ? (
+          <div className="absolute text-center w-[200px] bg-[red] left-[50%] translate-x-[-50%] p-[5px] rounded-[5px] text-[white]">
+            <p>Cart is empty</p>
+          </div>
+        ) : null}
+        <p className="hidden desktop:block mt-[36px] mb-[51px] font-inter font-[400] text-[15px] text-[#3D3D3D] cursor-pointer">
           <Link to="/">
             <span className="font-[700]">Home</span>
           </Link>{" "}
-          / Shop / Shopping Cart
+          / Shopping Cart
         </p>
         <div className="desktop:flex desktop:justify-between desktop:items-start">
           <div className="mb-[80px]">
@@ -170,7 +176,16 @@ function CartComponent() {
                 ${total.toFixed(2)}
               </p>
             </div>
-            <button className="w-[332px] text-center mx-auto py-[12px] bg-[#46A358] mt-[29px] rounded-[3px] font-inter font-[700] text-[15px] text-white">
+            <button
+              onClick={() => {
+                productsInCart.length != 0
+                  ? navigate("/checkout")
+                  : setError(true);
+              }}
+              className={`${
+                productsInCart == 0 ? `bg-[#A5A5A5]` : `bg-[#46A358]`
+              } w-[332px] text-center mx-auto py-[12px]  mt-[29px] rounded-[3px] font-inter font-[700] text-[15px] text-white`}
+            >
               Proceed To Checkout
             </button>
             <div className="font-inter font-[400] text-[15px] text-[#46A358] w-[133.41px] mx-auto mt-[14px]">
@@ -184,5 +199,3 @@ function CartComponent() {
 }
 
 export default CartComponent;
-
-// Cart sahifasi mobile dizayni tayyor bo'ldi. Endi uni Desktop versiyasini yasash kerak

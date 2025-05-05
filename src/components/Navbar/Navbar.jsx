@@ -60,7 +60,7 @@ function Navbar() {
             <img src={MagnifyingGlass} alt="Magnifying glass" />
             <Link to="/cart" className="relative">
               {productsInCart != 0 ? (
-                <div className="flex justify-center items-center rounded-[100%] absolute top-[0px] right-[-5px] font-inter font-[500] text-[9px] text-[white] bg-[#46A358] h-[12px] w-[15px] border-[2px] border-[solid] border-[white] p-[6px]">
+                <div className="flex justify-center items-center rounded-[100%] absolute top-[0px] right-[-5px] font-inter font-[500] text-[7px] text-[white] bg-[#46A358] h-[15px] w-[15px] border-[2px] border-[solid] border-[white]">
                   <p>{productsInCart}</p>
                 </div>
               ) : null}

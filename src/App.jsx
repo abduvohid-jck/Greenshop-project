@@ -6,6 +6,7 @@ import Register from "./pages/Register";
 import MobileNav from "./pages/MobileNav";
 import Profile from "./pages/Profile";
 import Cart from "./pages/Cart";
+import Checkout from "./pages/Checkout";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="/navigation" element={<MobileNav />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/cart" element={<Cart />} />
+        <Route path="/checkout" element={<Checkout />} />
       </Routes>
     </div>
   );
